@@ -34,7 +34,7 @@ using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 using PdfSharp.Pdf.Advanced;
 using PdfSharp.Pdf.Internal;
-#if !NETFX_CORE && !UWP
+#if !NETFX_CORE && !UWP && !NETCORE
 using System.Security.Cryptography;
 #endif
 
@@ -364,9 +364,10 @@ namespace PdfSharp.Pdf.Security
 
 #if !NETFX_CORE
             _md5.Initialize();
+            
             _md5.TransformBlock(userPad, 0, userPad.Length, userPad, 0);
             _md5.TransformBlock(ownerKey, 0, ownerKey.Length, ownerKey, 0);
-
+            
             // Split permission into 4 bytes
             byte[] permission = new byte[4];
             permission[0] = (byte)permissions;
@@ -614,7 +615,7 @@ namespace PdfSharp.Pdf.Security
         /// </summary>
         byte[] _encryptionKey;
 
-#if !SILVERLIGHT && !UWP
+#if !SILVERLIGHT && !UWP && !NETCORE
         /// <summary>
         /// The message digest algorithm MD5.
         /// </summary>

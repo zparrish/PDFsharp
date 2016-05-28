@@ -56,7 +56,10 @@ namespace Edf.Drawing
     /// Represents a 3-by-3 matrix that represents an affine 2D transformation.
     /// </summary>
     [DebuggerDisplay("{DebuggerDisplay}")]
-    [Serializable, StructLayout(LayoutKind.Sequential)] //, TypeConverter(typeof(MatrixConverter)), ValueSerializer(typeof(MatrixValueSerializer))]
+#if !NETCORE
+    [Serializable]
+#endif
+    [StructLayout(LayoutKind.Sequential)] //, TypeConverter(typeof(MatrixConverter)), ValueSerializer(typeof(MatrixValueSerializer))]
     public struct XMatrix : IFormattable
     {
         [Flags]

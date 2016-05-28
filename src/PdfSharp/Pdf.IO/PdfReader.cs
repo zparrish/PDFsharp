@@ -93,7 +93,7 @@ namespace PdfSharp.Pdf.IO
                 {
                     if (stream != null)
                     {
-#if UWP
+#if UWP || NETCORE
                         stream.Dispose();
 #else
                         stream.Close();
@@ -221,7 +221,7 @@ namespace PdfSharp.Pdf.IO
             finally
             {
                 if (stream != null)
-#if !UWP
+#if !UWP && !NETCORE
                     stream.Close();
 #else
                     stream.Dispose();

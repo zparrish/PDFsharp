@@ -107,7 +107,7 @@ namespace PdfSharp.Pdf.Advanced
             wrt.WriteLine("endbfrange");
 
             wrt.Write(suffix);
-#if !UWP
+#if !UWP && !NETCORE
             wrt.Close();
 #else
             wrt.Dispose();
@@ -115,7 +115,7 @@ namespace PdfSharp.Pdf.Advanced
 
             // Compress like content streams
             byte[] bytes = ms.ToArray();
-#if !UWP
+#if !UWP && !NETCORE
             ms.Close();
 #else
             ms.Dispose();

@@ -52,7 +52,7 @@ namespace PdfSharp.Fonts
         {
             if (_stream != null && closeUnderlyingStream)
             {
-#if !UWP
+#if !UWP && !NETCORE
                 _stream.Close();
 #endif
                 _stream.Dispose();

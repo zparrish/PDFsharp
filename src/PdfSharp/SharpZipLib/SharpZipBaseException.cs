@@ -47,10 +47,10 @@ namespace PdfSharp.SharpZipLib
     /// </summary>
     /// <remarks>NOTE: Not all exceptions thrown will be derived from this class.
     /// A variety of other exceptions are possible for example <see cref="ArgumentNullException"></see></remarks>
-#if !NETCF_1_0 && !NETCF_2_0
+#if !NETCF_1_0 && !NETCF_2_0 && !NETCORE
     [Serializable]
 #endif
-    internal class SharpZipBaseException : ApplicationException
+    internal class SharpZipBaseException : Exception
     {
 #if false//!NETCF_1_0 && !NETCF_2_0
 		/// <summary>

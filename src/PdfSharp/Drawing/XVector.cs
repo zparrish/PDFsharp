@@ -51,7 +51,9 @@ namespace Edf.Drawing
     /// Represents a two-dimensional vector specified by x- and y-coordinates.
     /// </summary>
     [DebuggerDisplay("{DebuggerDisplay}")]
+#if !NETCORE
     [Serializable]
+#endif
     [StructLayout(LayoutKind.Sequential)]
     public struct XVector : IFormattable
     {

@@ -246,7 +246,7 @@ namespace PdfSharp.Drawing
             try
             {
                 Lock.EnterGdiPlus();
-                _gdiImage = Image.FromStream(stream);
+                //_gdiImage = Image.FromStream(stream);
             }
             finally { Lock.ExitGdiPlus(); }
 #endif

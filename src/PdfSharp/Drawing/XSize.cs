@@ -57,7 +57,10 @@ namespace PdfSharp.Drawing
     /// graphical object.
     /// </summary>
     [DebuggerDisplay("{DebuggerDisplay}")]
-    [Serializable, StructLayout(LayoutKind.Sequential)] //, ValueSerializer(typeof(SizeValueSerializer)), TypeConverter(typeof(SizeConverter))]
+#if !NETCORE
+    [Serializable]
+#endif
+    [StructLayout(LayoutKind.Sequential)] //, ValueSerializer(typeof(SizeValueSerializer)), TypeConverter(typeof(SizeConverter))]
     public struct XSize : IFormattable
     {
         /// <summary>

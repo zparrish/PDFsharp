@@ -329,7 +329,7 @@ namespace PdfSharp.Pdf
                 if (stream != null)
                 {
                     if (closeStream)
-#if UWP
+#if UWP || NETCORE
                         stream.Dispose();
 #else
                         stream.Close();

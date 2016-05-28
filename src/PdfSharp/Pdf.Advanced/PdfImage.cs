@@ -863,7 +863,7 @@ namespace PdfSharp.Pdf.Advanced
             Debug.Assert(streamLength > 0, "Bitmap image encoding failed.");
             if (streamLength > 0)
             {
-#if !NETFX_CORE && !UWP
+#if !NETFX_CORE && !UWP && !NETCORE
                 // THHO4STLA: available with wrt, but not with wrt81.
                 // Note: imageBits.Length can be larger than streamLength. Do not use these extra bytes!
                 byte[] imageBits = memory.GetBuffer();
@@ -872,7 +872,7 @@ namespace PdfSharp.Pdf.Advanced
                 memory.Seek(0, SeekOrigin.Begin);
                 memory.Read(imageBits, 0, streamLength);
                 memory.Close();
-#elif UWP
+#elif UWP || NETCORE
                 byte[] imageBits = new byte[streamLength];
                 memory.Seek(0, SeekOrigin.Begin);
                 memory.Read(imageBits, 0, streamLength);
@@ -1067,7 +1067,7 @@ namespace PdfSharp.Pdf.Advanced
                 byte[] imageBits = new byte[streamLength];
                 memory.Seek(0, SeekOrigin.Begin);
                 memory.Read(imageBits, 0, streamLength);
-#if !UWP
+#if !UWP && !NETCORE
                 memory.Close();
 #else
                 memory.Dispose();

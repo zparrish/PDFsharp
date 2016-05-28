@@ -62,7 +62,10 @@ namespace PdfSharp.Drawing
     /// Stores a set of four floating-point numbers that represent the location and size of a rectangle.
     /// </summary>
     [DebuggerDisplay("{DebuggerDisplay}")]
-    [Serializable, StructLayout(LayoutKind.Sequential)] // , ValueSerializer(typeof(RectValueSerializer)), TypeConverter(typeof(RectConverter))]
+#if !NETCORE
+    [Serializable]
+#endif
+    [StructLayout(LayoutKind.Sequential)] // , ValueSerializer(typeof(RectValueSerializer)), TypeConverter(typeof(RectConverter))]
     public struct XRect : IFormattable
     {
         /// <summary>

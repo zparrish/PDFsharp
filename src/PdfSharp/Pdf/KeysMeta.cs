@@ -32,6 +32,10 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using System.Reflection;
 
+#if NETCORE
+using System.Linq;
+#endif
+
 namespace PdfSharp.Pdf
 {
     /// <summary>
@@ -197,7 +201,11 @@ namespace PdfSharp.Pdf
             FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
             foreach (FieldInfo field in fields)
             {
+#if NETCORE
+                var attributes = field.GetCustomAttributes(typeof(KeyInfoAttribute), false).ToArray();
+#else
                 object[] attributes = field.GetCustomAttributes(typeof(KeyInfoAttribute), false);
+#endif
                 if (attributes.Length == 1)
                 {
                     KeyInfoAttribute attribute = (KeyInfoAttribute)attributes[0];

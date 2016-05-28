@@ -40,16 +40,16 @@
 
 using System;
 using System.Diagnostics;
-#if !NETFX_CORE && !UWP
+#if !NETFX_CORE && !UWP && !NETCORE
 using System.Security.Cryptography;
 #endif
 
 // ReSharper disable InconsistentNaming
 
-#if SILVERLIGHT || WINDOWS_PHONE || UWP || (GDI && DEBUG)
+#if SILVERLIGHT || WINDOWS_PHONE || UWP || (GDI && DEBUG) || NETCORE
 namespace PdfSharp.Pdf.Security
 {
-#if UWP
+#if UWP || NETCORE
     class HashAlgorithm
     {
         public int HashSizeValue { get; set; }
