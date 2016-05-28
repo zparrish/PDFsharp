@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "NETStandard.Library": "1.5.0-rc2-24027",
+    "PdfSharp-NETCore": "1.0.0-*"
+  },
+
+  "frameworks": {
+    "netstandard1.5": {
+      "imports": "dnxcore50"
+    }
+  },
+
+  "buildOptions": {
+    "define": [ "CORE" ],
+    "keyFile": "StrongnameKey.snk",
+    "compile": {
+      "include": [
+        "../PdfSharp.Charting"
+      ],
+      "exclude": [
+        "../PdfSharp.Charting/bin",
+        "../PdfSharp.Charting/obj",
+        "../PdfSharp.Charting/PdfSharp.Charting.csproj",
+        "../PdfSharp.Charting/PdfSharp.Charting.csproj.user",
+        "../PdfSharp.Charting/StrongnameKey.snk",
+        "../PdfSharp.Charting/Resources"
+      ]
+    }
+  }
+}
