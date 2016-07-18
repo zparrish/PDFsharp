@@ -6,8 +6,8 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>711f118e-4083-4a74-8f85-e1f4ec53cdeb</ProjectGuid>
-    <RootNamespace>PdfSharp</RootNamespace>
+    <ProjectGuid>3094d33e-7392-43f1-928f-6cc459679515</ProjectGuid>
+    <RootNamespace>PdfSharp_NETCore</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -16,9 +16,4 @@
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.targets" Condition="'$(VSToolsPath)' != ''" />
-  <ProjectExtensions>
-    <VisualStudio>
-      <UserProperties __JSONSchema="http://json.schemastore.org/project-1.0.0-rc2" />
-    </VisualStudio>
-  </ProjectExtensions>
 </Project>
