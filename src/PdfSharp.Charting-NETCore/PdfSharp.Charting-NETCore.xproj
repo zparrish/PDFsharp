@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>68b50392-5eea-4cf2-ba10-20ce93bf0260</ProjectGuid>
+    <ProjectGuid>383abef6-b2aa-4308-9526-25cd8fef9980</ProjectGuid>
     <RootNamespace>PdfSharp.Charting_NETCore</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
